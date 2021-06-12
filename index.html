@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zegar</title>
+    <link rel="icon" href="./assets/img/four-o-clock.png">
+    <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+<body>
+    <div class="loader">
+        <div class="center">
+            <div class="rectangle"></div>
+            <div class="rectangle"></div>
+            <div class="rectangle"></div>
+        </div>
+    </div>
+    <div class="analog-clock active">
+        <div class="hand hour-hand"></div>
+        <div class="hand minute-hand"></div>
+        <div class="hand second-hand">
+            <div class="second-hand-extension"></div>
+        </div>
+        <div class="dot"></div>
+        <div class="numbers"></div>
+        <div class="lines"></div>
+    </div>
+    <div class="digital-clock">
+        <div class="digital-hours">00</div>
+        <span class="digital-colon colon1">:</span>
+        <div class="digital-minutes">00</div>
+        <span class="digital-colon colon2 deactivated">:</span>
+        <div class="digital-seconds deactivated">00</div>
+    </div>
+    <button class="settingsBtn">
+        <img src="./assets/img/setting.png" alt="">
+    </button>
+    <div class="options-menu">
+        <button class="clock-btn options-btn">Cyfrowy</button>
+        <button class="hands-btn options-btn">Wskazówki</button>
+        <button class="analog-shield-btn options-btn">Tarcza</button>
+        <button class="add-seconds-btn options-btn deactivated">+sekundy</button>
+        <button class="digital-shield-btn options-btn deactivated">Tarcza</button>
+        <!-- wskazowki opcje -->
+        <label for="choose-hand" class="label deactivated">Wybierz wskazówkę</label>
+        <select id="choose-hand" class="deactivated">
+            <option value="s" selected>sekundowa</option>
+            <option value="m">minutowa</option>
+            <option value="h">godzinowa</option>
+        </select>
+        <label for="choose-hand-color" class="label deactivated">Kolor</label>
+        <input type="color" id="choose-hand-color" class="deactivated">
+        <label for="" class="label deactivated">Długość</label>
+        <div class="lengthWidth deactivated">
+            <button class="length-plus changeBtns">+</button>
+            <button class="length-minus changeBtns">-</button>
+        </div>
+        <label for="" class="label deactivated">Szerokość</label>
+        <div class="lengthWidth deactivated">
+            <button class="width-plus changeBtns">+</button>
+            <button class="width-minus changeBtns">-</button>
+        </div>
+        <label for="sizer" class="label deactivated">Zmień o (px)</label>
+        <input type="text" id="sizer" value="1" maxlength="3" class="deactivated">
+        <label for="choose-dot-color" class="label deactivated">Kolor kropki</label>
+        <input type="color" id="choose-dot-color" class="deactivated">
+        <button class="default options-btn deactivated">Przywróć ustawienia domyślne</button>
+        <button class="go-back deactivated">
+            <img src="./assets/img/angle-circle-arrow-left.png" alt="">
+        </button>
+        <!-- analogowa tarcza opcje -->
+        <label for="choose-analog-color-shield" class="label2 deactivated">Kolor tarczy</label>
+        <input type="color" id="choose-analog-color-shield" class="deactivated">
+        <label for="choose-analog-border-color" class="label2 deactivated">Kolor obramowania</label>
+        <input type="color" id="choose-analog-border-color" class="deactivated">
+        <label for="choose-lines" class="label2 deactivated">Wybierz kreski</label>
+        <select id="choose-lines" class="deactivated">
+            <option value="all">wszytskie</option>
+            <option value="every5">co piąta</option>
+        </select>
+        <input type="color" id="choose-lines-color" class="deactivated">
+        <label for="choose-numbers" class="label2 deactivated">Wybierz cyfry</label>
+        <select id="choose-numbers" class="deactivated">
+            <option value="all">wszystkie</option>
+            <option value="0">1</option>
+            <option value="1">2</option>
+            <option value="2">3</option>
+            <option value="3">4</option>
+            <option value="4">5</option>
+            <option value="5">6</option>
+            <option value="6">7</option>
+            <option value="7">8</option>
+            <option value="8">9</option>
+            <option value="9">10</option>
+            <option value="10">11</option>
+            <option value="11">12</option>
+        </select>
+        <input type="color" id="choose-numbers-color" class="deactivated">
+        <button class="default2 options-btn deactivated">
+            Przywróć ustawienia domyślne
+        </button>
+        <button class="go-back2 deactivated">
+            <img src="./assets/img/angle-circle-arrow-left.png" alt="">
+        </button>
+        <!-- cyfrowa tarcza opcje -->
+        <label for="choose-digital-color-shield" class="label3 deactivated">Kolor tarczy</label>
+        <input type="color" id="choose-digital-color-shield" class="deactivated">
+        <label for="choose-digital-border-color" class="label3 deactivated">Kolor obramowania</label>
+        <input type="color" id="choose-digital-border-color" class="deactivated">
+        <label for="choose-digital-numbers" class="label3 deactivated">Wybierz cyfry</label>
+        <select id="choose-digital-numbers" class="deactivated">
+            <option value="all">wszytskie</option>
+            <option value="h">godzinowe</option>
+            <option value="m">minutowe</option>
+            <option value="s">sekundowe</option>
+        </select>
+        <input type="color" id="choose-digital-numbers-color" class="deactivated">
+        <label for="choose-colon" class="label3 deactivated">Wybierz dwukropek</label>
+        <select id="choose-colon" class="deactivated">
+            <option value="all">oba</option>
+            <option value="f" selected>pierwszy</option>
+            <option value="s">drugi</option>
+        </select>
+        <input type="color" id="choose-colon-color" class="deactivated">
+        <button class="default3 options-btn deactivated">
+            Przywróć ustawienia domyślne
+        </button>
+        <button class="go-back3 deactivated">
+            <img src="./assets/img/angle-circle-arrow-left.png" alt="">
+        </button>
+        <div class="contact">
+            <p>Jeżeli zauważysz jakieś błędy to <a href="mailto:tuczynskimateusz@outlook.com">napisz do mnie</a></p>
+        </div>
+        <div class="author">
+            &copy;2021 Mateusz Tuczyński
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/js-cookie@rc/dist/js.cookie.min.js"></script>
+    <script src="./assets/js/info.js"></script>
+    <script src="./assets/js/main.js"></script>
+    <script src="./assets/js/analog-clock.js"></script>
+    <script src="./assets/js/digital-clock.js"></script>
+    <script src="./assets/js/loader.js"></script>
+    <script src="./assets/js/options-menu.js"></script>
+</body>
+</html>
